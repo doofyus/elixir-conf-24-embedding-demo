@@ -2,6 +2,16 @@
 
 **TODO: Add description**
 
+## Usage
+
+```elixir
+iex -S mix
+
+Indexing.run
+```
+
+
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
