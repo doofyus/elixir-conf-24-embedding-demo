@@ -1,4 +1,4 @@
-defmodule Tools.Chunker do
+defmodule Indexing.Tools.Chunker do
   @moduledoc """
   Based on https://github.com/openai/chatgpt-retrieval-plugin/blob/main/services/chunks.py
   """

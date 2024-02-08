@@ -1,5 +1,14 @@
 import Config
 
+config :demo, Demo.Repo,
+  database: "demo_db",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  types: Indexing.PostgrexTypes
+
+config :demo, ecto_repos: [Demo.Repo]
+
 config :rustler_precompiled, :force_build, tiktoken: true
 
 config :openai,
