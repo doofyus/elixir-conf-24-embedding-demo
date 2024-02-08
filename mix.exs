@@ -14,7 +14,8 @@ defmodule Demo.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Demo.Application, []}
     ]
   end
 
@@ -23,7 +24,10 @@ defmodule Demo.MixProject do
     [
       {:tiktoken, "~> 0.2.0"},
       {:rustler, ">= 0.0.0", optional: true},
-      {:openai, "~> 0.6.1"}
+      {:openai, "~> 0.6.1"},
+      {:pgvector, "~> 0.2.0"},
+      {:ecto_sql, "~> 3.5"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 end
