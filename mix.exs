@@ -22,7 +22,8 @@ defmodule Demo.MixProject do
   defp deps do
     [
       {:tiktoken, "~> 0.2.0"},
-      {:rustler, ">= 0.0.0", optional: true}
+      {:rustler, ">= 0.0.0", optional: true},
+      {:openai, "~> 0.6.1"}
     ]
   end
 end
