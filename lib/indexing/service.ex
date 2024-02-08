@@ -12,4 +12,8 @@ defmodule Indexing.Service do
   def nearest_neighbors(embedding, k \\ 5) do
     Repo.all(from(c in Chunk, order_by: l2_distance(c.embedding, ^embedding), limit: ^k))
   end
+
+  def wipe_chunks() do
+    Repo.delete_all(Chunk)
+  end
 end
