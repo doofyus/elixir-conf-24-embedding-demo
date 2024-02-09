@@ -9,7 +9,7 @@ defmodule Indexing.Service do
     Repo.insert!(%Chunk{text: text, embedding: embedding})
   end
 
-  def nearest_neighbors(embedding, k \\ 5) do
+  def nearest_neighbours(embedding, k \\ 5) do
     Repo.all(from(c in Chunk, order_by: l2_distance(c.embedding, ^embedding), limit: ^k))
   end
 

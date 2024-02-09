@@ -6,7 +6,7 @@ defmodule Indexing do
   # text-embedding-3-large	$0.00013 / 1K tokens
   # ada v2	$0.00010 / 1K tokens                  !! REQUIRED, OTHERS NOT SUPPORTED BY :tiktoken !!
   @tokenizer_model "text-embedding-ada-002"
-  @embeddings_model "text-embedding-3-small"
+  @embedding_model "text-embedding-3-small"
 
   def run(path \\ "data/demo.txt") do
     path
@@ -14,6 +14,10 @@ defmodule Indexing do
     |> chunk_file
     |> get_embeddings
     |> store_vectors
+  end
+
+  def embedding_model do
+    @embedding_model
   end
 
   defp read_file(path) do
@@ -32,7 +36,7 @@ defmodule Indexing do
 
   defp get_chunk_embedding(chunk) do
     # TODO: input should be a list of strings (couldn't get it working)
-    with {:ok, resp} <- OpenAI.embeddings(model: @embeddings_model, input: chunk),
+    with {:ok, resp} <- OpenAI.embeddings(model: embedding_model, input: chunk),
          %{usage: usage} <- resp,
          %{data: [%{"embedding" => embedding, "object" => "embedding"} | _]} <- resp do
       {chunk, embedding, usage}
