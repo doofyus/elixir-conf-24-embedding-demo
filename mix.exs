@@ -3,7 +3,7 @@ defmodule Demo.MixProject do
 
   def project do
     [
-      app: :demo,
+      app: :embed_ex,
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -15,7 +15,7 @@ defmodule Demo.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Demo.Application, []}
+      mod: {EmbedEx.Application, []}
     ]
   end
 
@@ -24,7 +24,7 @@ defmodule Demo.MixProject do
     [
       {:tiktoken, "~> 0.2.0"},
       {:rustler, ">= 0.0.0", optional: true},
-      {:openai, "~> 0.6.1"},
+      {:ex_openai, "~> 1.5"},
       {:pgvector, "~> 0.2.0"},
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"}

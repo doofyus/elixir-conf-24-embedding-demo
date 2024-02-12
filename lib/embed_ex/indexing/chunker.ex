@@ -1,4 +1,4 @@
-defmodule Indexing.Tools.Chunker do
+defmodule EmbedEx.Indexing.Chunker do
   @moduledoc """
   Based on https://github.com/openai/chatgpt-retrieval-plugin/blob/main/services/chunks.py
   """
@@ -19,40 +19,40 @@ defmodule Indexing.Tools.Chunker do
   # EMBEDDINGS_BATCH_SIZE = 128  # The number of embeddings to request at a time
   # MAX_NUM_CHUNKS = 10000  # The maximum number of chunks to generate from a text
 
-  def text_chunks(model, text, chunk_size \\ @chunk_size) do
-    text_chunks_trimmed(model, String.trim(text), chunk_size)
+  def text_chunks(text, chunk_size \\ @chunk_size) do
+    text_chunks_trimmed(String.trim(text), chunk_size)
   end
 
   # Return an empty list if the text is empty or whitespace
-  defp text_chunks_trimmed(_model, "", _chunk_size), do: []
+  defp text_chunks_trimmed("", _chunk_size), do: []
 
-  defp text_chunks_trimmed(model, text, chunk_size) do
+  defp text_chunks_trimmed(text, chunk_size) do
     # Tokenize the text
-    {:ok, tokens} = Tiktoken.encode(model, text)
+    {:ok, tokens} = Tiktoken.encode(model_tokenizer(), text)
 
     # Loop until all tokens are consumed while tokens and num_chunks < MAX_NUM_CHUNKS
-    loop(model, tokens, chunk_size, 0, [])
+    loop(tokens, chunk_size, 0, [])
 
     # TODO: Handle the remaining tokens
   end
 
-  defp loop(_model, [], _chunk_size, _chunk_count, chunks), do: chunks
+  defp loop([], _chunk_size, _chunk_count, chunks), do: chunks
 
-  defp loop(_model, _tokens, _chunk_size, chunk_count, chunks) when chunk_count >= @chunks_max,
+  defp loop(_tokens, _chunk_size, chunk_count, chunks) when chunk_count >= @chunks_max,
     do: chunks
 
-  defp loop(model, tokens, chunk_size, chunk_count, chunks) do
+  defp loop(tokens, chunk_size, chunk_count, chunks) do
     # Take the first chunk_size tokens as a chunk
     {chunk, rest} = Enum.split(tokens, chunk_size)
 
     # Decode the chunk into text
-    {:ok, text} = Tiktoken.decode(model, chunk)
+    {:ok, text} = Tiktoken.decode(model_tokenizer(), chunk)
 
     # Skip the chunk if it is empty or whitespace
     if String.trim(text) == "" do
       # Remove the tokens corresponding to the chunk text from the remaining tokens
       # Continue to the next iteration of the loop
-      loop(model, rest, chunk_size, chunk_count, chunks)
+      loop(rest, chunk_size, chunk_count, chunks)
     else
       text_clean =
         text
@@ -62,7 +62,7 @@ defmodule Indexing.Tools.Chunker do
 
       # Remove the tokens corresponding to the chunk text from the remaining tokens
       tokens_to_remove =
-        Tiktoken.encode(model, text_clean)
+        Tiktoken.encode(model_tokenizer(), text_clean)
         |> elem(1)
         |> Enum.count()
 
@@ -71,10 +71,10 @@ defmodule Indexing.Tools.Chunker do
       if String.length(text_clean) > @chunk_min_length do
         # Increment the number of chunks
         # Add the chunk to the list of chunks
-        loop(model, remaining_tokens, chunk_size, chunk_count + 1, chunks ++ [text_clean])
+        loop(remaining_tokens, chunk_size, chunk_count + 1, chunks ++ [text_clean])
       else
         # Continue to the next iteration of the loop
-        loop(model, remaining_tokens, chunk_size, chunk_count, chunks)
+        loop(remaining_tokens, chunk_size, chunk_count, chunks)
       end
     end
   end
@@ -105,5 +105,11 @@ defmodule Indexing.Tools.Chunker do
     else
       text
     end
+  end
+
+  # Models
+
+  def model_tokenizer() do
+    Application.get_env(:embed_ex, :models)[:tokenizer]
   end
 end
