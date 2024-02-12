@@ -1,4 +1,4 @@
-defmodule Demo.Repo.Migrations.CreateVectorExtension do
+defmodule EmbedEx.Repo.Migrations.CreateVectorExtension do
   use Ecto.Migration
 
   def up do

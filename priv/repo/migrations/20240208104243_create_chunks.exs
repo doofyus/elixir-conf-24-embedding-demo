@@ -1,4 +1,4 @@
-defmodule Demo.Repo.Migrations.CreateChunks do
+defmodule EmbedEx.Repo.Migrations.CreateChunks do
   use Ecto.Migration
 
   def change do

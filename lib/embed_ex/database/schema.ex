@@ -1,4 +1,4 @@
-defmodule Indexing.Chunk do
+defmodule EmbedEx.Database.Schema do
   use Ecto.Schema
 
   schema "chunks" do
