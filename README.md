@@ -23,8 +23,7 @@ export OPENAI_ORGANIZATION_KEY="<openai-org>"
 docker-compose up -d
 ```
 
-### Option #1
-Recommended for Elixir devs.
+#### Run the app
 
 ```elixir
 mix deps.get
@@ -33,17 +32,6 @@ mix ecto.create
 mix ecto.migrate
 
 iex -S mix
-
-EmbedEx.index <file_path>
-EmbedEx.query <query>
-```
-
-### Option #2
-For non-Elixir devs.
-
-```
-release/embed_ex/bin/embed_ex eval "EmbedEx.Release.migrate"
-release/embed_ex/bin/embed_ex start_iex
 
 EmbedEx.index <file_path>
 EmbedEx.query <query>
