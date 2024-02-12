@@ -4,33 +4,31 @@
 
 ## Usage
 
-#### Set the environment variables
+#### Update the config
 
-```bash
-export DATABASE_URL="ecto://postgres:postgres@localhost/demo_db"
+```
+open config/config.exs
+```
+...and edit the file to match your configuration.
 
-export MODEL_EMBEDDING="text-embedding-3-small"
-export MODEL_TOKENIZER="text-embedding-ada-002"
-export MODEL_COMPLETION="gpt-3.5-turbo-0125"
+#### Update deps
 
-export OPENAI_API_KEY="<openai_key>"
-export OPENAI_ORGANIZATION_KEY="<openai-org>"
+```elixir
+mix deps.get
 ```
 
-#### Get the DB up and running
+#### Handle the DB
 
-```bash
+```elixir
 docker-compose up -d
+
+mix ecto.create
+mix ecto.migrate
 ```
 
 #### Run the app
 
 ```elixir
-mix deps.get
-
-mix ecto.create
-mix ecto.migrate
-
 iex -S mix
 
 EmbedEx.index <file_path>
