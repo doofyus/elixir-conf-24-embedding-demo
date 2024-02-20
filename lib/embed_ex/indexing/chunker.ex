@@ -5,111 +5,151 @@ defmodule EmbedEx.Indexing.Chunker do
 
   # The target size of each text chunk in tokens
   @chunk_size 200
-  # The minimum size of each text chunk in characters
+  # The minimum size of each text chunk in chars
   @chunk_chars_min 350
   # Discard chunks shorter than this
-  @chunk_min_length 4
+  @chunk_min_length 5
   # The maximum number of chunks to generate from a text
   @chunks_max 10000
 
   # ------ other recommended values ------
   # CHUNK_SIZE = 1024  # The target size of each text chunk in tokens
-  # MIN_CHUNK_SIZE_CHARS = 350  # The minimum size of each text chunk in characters
+  # MIN_CHUNK_SIZE_CHARS = 350  # The minimum size of each text chunk in chars
   # MIN_CHUNK_LENGTH_TO_EMBED = 5  # Discard chunks shorter than this
   # EMBEDDINGS_BATCH_SIZE = 128  # The number of embeddings to request at a time
   # MAX_NUM_CHUNKS = 10000  # The maximum number of chunks to generate from a text
 
-  def text_chunks(text, chunk_size \\ @chunk_size) do
-    text_chunks_trimmed(String.trim(text), chunk_size)
-  end
+  # Split a text into chunks of ~@chunk_size tokens, based on punctuation and newline boundaries.
+  @spec text_chunks(String.t(), pos_integer()) :: {:ok, list(String.t())} | {:error, atom()}
+  def text_chunks(text, chunk_size \\ @chunk_size)
 
-  # Return an empty list if the text is empty or whitespace
-  defp text_chunks_trimmed("", _chunk_size), do: []
-
-  defp text_chunks_trimmed(text, chunk_size) do
-    # Tokenize the text
-    {:ok, tokens} = Tiktoken.encode(model_tokenizer(), text)
-
-    # Loop until all tokens are consumed while tokens and num_chunks < MAX_NUM_CHUNKS
-    loop(tokens, chunk_size, 0, [])
-
-    # TODO: Handle the remaining tokens
-  end
-
-  defp loop([], _chunk_size, _chunk_count, chunks), do: chunks
-
-  defp loop(_tokens, _chunk_size, chunk_count, chunks) when chunk_count >= @chunks_max,
-    do: chunks
-
-  defp loop(tokens, chunk_size, chunk_count, chunks) do
-    # Take the first chunk_size tokens as a chunk
-    {chunk, rest} = Enum.split(tokens, chunk_size)
-
-    # Decode the chunk into text
-    {:ok, text} = Tiktoken.decode(model_tokenizer(), chunk)
-
-    # Skip the chunk if it is empty or whitespace
-    if String.trim(text) == "" do
-      # Remove the tokens corresponding to the chunk text from the remaining tokens
-      # Continue to the next iteration of the loop
-      loop(rest, chunk_size, chunk_count, chunks)
-    else
-      text_clean =
-        text
-        |> check_punctuations()
-        |> String.replace("\n", " ")
-        |> String.trim()
-
-      # Remove the tokens corresponding to the chunk text from the remaining tokens
-      tokens_to_remove =
-        Tiktoken.encode(model_tokenizer(), text_clean)
-        |> elem(1)
-        |> Enum.count()
-
-      remaining_tokens = Enum.drop(tokens, tokens_to_remove)
-
-      if String.length(text_clean) > @chunk_min_length do
-        # Increment the number of chunks
-        # Add the chunk to the list of chunks
-        loop(remaining_tokens, chunk_size, chunk_count + 1, chunks ++ [text_clean])
-      else
-        # Continue to the next iteration of the loop
-        loop(remaining_tokens, chunk_size, chunk_count, chunks)
-      end
+  def text_chunks(text, chunk_size)
+      when is_binary(text) and is_integer(chunk_size) and chunk_size > 0 do
+    with :ok <- check_not_empty_or_whitespace(text),
+         {:ok, clean_text} <- clean_text(text),
+         {:ok, tokens} <- tokenize_text(clean_text) do
+      create_chunks(tokens, chunk_size)
     end
   end
 
-  defp check_punctuations(text) do
-    # Find the last period or punctuation mark in the chunk
-    reversed_text_chars =
-      text
-      |> String.codepoints()
-      |> Enum.reverse()
+  def text_chunks(_, _), do: {:error, :invalid_input}
 
-    acc = {Enum.count(reversed_text_chars), nil}
+  defp create_chunks(tokens, chunk_size, chunks \\ []) do
+    {chunk_tokens, rest_tokens} = Enum.split(tokens, chunk_size)
 
-    {index, last_punct} =
-      Enum.reduce_while(reversed_text_chars, acc, fn char, {index, _} ->
-        case char do
-          "." -> {:halt, {index, char}}
-          "!" -> {:halt, {index, char}}
-          "?" -> {:halt, {index, char}}
-          _ -> {:cont, {index - 1, nil}}
+    with {:ok, chunk_text} <- detokenize_text(chunk_tokens),
+         :ok <- check_not_empty_or_whitespace(chunk_text),
+         {:ok, wrapped_text} <- wrap_text_by_sentence(chunk_text),
+         {:ok, cleaned_text} <- clean_text(wrapped_text),
+         {:ok, cleaned_text_tokens} <- tokenize_text(cleaned_text),
+         {:ok, remaining_tokens} <- remaining_tokens(tokens, cleaned_text_tokens) do
+      IO.inspect("remaining tokens: #{length(remaining_tokens)}")
+
+      updated_chunks =
+        case String.length(cleaned_text) > @chunk_min_length do
+          true -> chunks ++ [cleaned_text]
+          false -> chunks
         end
-      end)
 
-    # If there is a punctuation mark, and the last punctuation index is before @chunk_chars_min
-    # Truncate the chunk text at the punctuation mark
-    if last_punct && index < @chunk_chars_min do
-      text |> String.slice(0, index)
+      check_chunks_count_and_continue(remaining_tokens, chunk_size, updated_chunks)
     else
-      text
+      {:error, :empty_text} ->
+        check_chunks_count_and_continue(rest_tokens, chunk_size, chunks)
+
+      {:error, _} = error ->
+        IO.inspect(error, label: "error1")
+        error
+
+      {[], asd} ->
+        IO.inspect(asd, label: "asd")
+
+      _ = error ->
+        IO.inspect(error, label: "error2")
     end
+  end
+
+  defp check_chunks_count_and_continue(remaining_tokens, chunk_size, chunks) do
+    case {remaining_tokens, length(chunks)} do
+      {[_ | _] = tokens, num_chunks} when num_chunks < @chunks_max ->
+        create_chunks(tokens, chunk_size, chunks)
+
+      {[_ | _], num_chunks} when num_chunks >= @chunks_max ->
+        # TODO: instead of ignoring the remaining tokens, return them
+        IO.puts("Max chunks reached - ignoring the remaining tokens!")
+
+        {:ok, chunks}
+
+      _ ->
+        {:ok, chunks}
+    end
+  end
+
+  defp check_not_empty_or_whitespace(text) do
+    case String.trim(text) != "" do
+      true -> :ok
+      false -> {:error, :empty_text}
+    end
+  end
+
+  defp clean_text(text) do
+    clean_text =
+      text
+      |> String.replace("\n\n", "\n")
+      |> String.replace("\n", " ")
+      |> String.replace("\r\r", "\r")
+      |> String.replace("\r", " ")
+      |> String.replace("    ", " ")
+      |> String.replace("   ", " ")
+      |> String.replace("  ", " ")
+      |> String.trim()
+
+    {:ok, clean_text}
+  end
+
+  defp detokenize_text(tokens) do
+    Tiktoken.decode(model_tokenizer(), tokens)
+  end
+
+  defp tokenize_text(text) do
+    Tiktoken.encode(model_tokenizer(), text)
+  end
+
+  defp remaining_tokens(tokens, cleaned_text_tokens) do
+    remaining_tokens =
+      tokens
+      |> Enum.split(length(cleaned_text_tokens))
+      |> elem(1)
+
+    {:ok, remaining_tokens}
+  end
+
+  defp wrap_text_by_sentence(text) do
+    chars = String.split(text, "", trim: true)
+
+    output =
+      chars
+      |> Enum.reverse()
+      |> Enum.find_index(fn c -> c == "." || c == "!" || c == "?" || c == "\n" end)
+      |> case do
+        nil ->
+          text
+
+        idx when idx < @chunk_chars_min and idx != 0 ->
+          chars
+          |> Enum.split(-idx)
+          |> elem(0)
+          |> Enum.join()
+
+        _ ->
+          text
+      end
+
+    {:ok, output}
   end
 
   # Models
 
-  def model_tokenizer() do
+  defp model_tokenizer() do
     Application.get_env(:embed_ex, :models)[:tokenizer]
   end
 end
