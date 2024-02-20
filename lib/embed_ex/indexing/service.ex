@@ -27,8 +27,7 @@ defmodule EmbedEx.Indexing.Service do
   end
 
   defp chunk_file({:ok, file_content}) do
-    # TODO: the Chunker output and error handling needs improvement
-    chunks = Chunker.text_chunks(file_content)
+    {:ok, chunks} = Chunker.text_chunks(file_content)
 
     IO.inspect("- file chunked successfully (#{length(chunks)} chunks)")
 
