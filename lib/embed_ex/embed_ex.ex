@@ -12,8 +12,8 @@ defmodule EmbedEx do
     Indexing.run(file_path)
   end
 
-  @spec query(String.t()) :: {:ok, String.t()} | {:error, atom()}
-  def query(prompt) do
-    Querying.run(prompt)
+  @spec query(String.t(), boolean()) :: {:ok, String.t()} | {:error, atom()}
+  def query(prompt, query_expansion \\ false) do
+    Querying.run(prompt, query_expansion)
   end
 end
