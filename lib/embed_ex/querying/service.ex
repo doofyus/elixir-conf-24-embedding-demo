@@ -70,7 +70,7 @@ defmodule EmbedEx.Querying.Service do
   defp get_nearest_neighbours_for_embedding({:ok, {prompt, embedding}}) do
     case Database.nearest_neighbours(embedding) do
       [] ->
-        {:error, :no_neighbours}
+        {:error, {:no_neighbours, prompt}}
 
       neighbours ->
         IO.inspect(
@@ -87,6 +87,9 @@ defmodule EmbedEx.Querying.Service do
     neighbours
     |> Enum.map(fn neighbour -> {:ok, {prompt, neighbour}} end)
   end
+
+  defp flat_map_nearest_neighbours({:error, {:no_neighbours, prompt}}),
+    do: [{:ok, {prompt, %{text: ""}}}]
 
   defp flat_map_nearest_neighbours(error), do: [error]
 
