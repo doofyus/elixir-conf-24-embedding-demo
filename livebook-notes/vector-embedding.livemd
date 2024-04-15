@@ -1,0 +1,141 @@
+# Vector Embedding
+
+```elixir
+Mix.install([
+  {:kino, "~> 0.12.3"},
+  {:bumblebee, "~> 0.5.3"},
+  {:exla, "~> 0.7.1"},
+  {:nx, "~> 0.7.1"},
+  {:tsne, "~> 0.1.3"},
+  {:rustler, "~> 0.0"},
+  {:kino_vega_lite, "~> 0.1.10"},
+  {:kino_explorer, "~> 0.1.11"}
+])
+
+Nx.global_default_backend(EXLA.Backend)
+```
+
+## Vectors
+
+```elixir
+# Small model from HuggingFace (22M params.)
+{:ok, model_info} = Bumblebee.load_model({:hf, "sentence-transformers/all-MiniLM-L6-v2"})
+{:ok, tokenizer} = Bumblebee.load_tokenizer({:hf, "sentence-transformers/all-MiniLM-L6-v2"})
+
+# Configure inference
+serving =
+  Bumblebee.Text.TextEmbedding.text_embedding(model_info, tokenizer,
+    output_pool: :mean_pooling,
+    output_attribute: :hidden_state,
+    embedding_processor: :l2_norm
+  )
+
+# Different vectors for random words
+dog = Nx.Serving.run(serving, "dog")
+cat = Nx.Serving.run(serving, "cat")
+airplane = Nx.Serving.run(serving, "airplane")
+
+# See the different vectors
+[dog: dog, cat: cat, airplane: airplane]
+```
+
+## Similarity
+
+```elixir
+# Cosine similarity - when directionality matters more than magnitude (like text)
+cosine_similarity = fn vec1, vec2 ->
+  dot_product = Nx.dot(vec1, vec2)
+  norm_vec1 = Nx.LinAlg.norm(vec1)
+  norm_vec2 = Nx.LinAlg.norm(vec2)
+  Nx.divide(dot_product, Nx.multiply(norm_vec1, norm_vec2))
+end
+
+# Similarity between pets and their similarity to an airplane
+[
+  dog_airplane: cosine_similarity.(dog[:embedding], airplane[:embedding]),
+  cat_airplane: cosine_similarity.(cat[:embedding], airplane[:embedding]),
+  dog_cat: cosine_similarity.(dog[:embedding], cat[:embedding])
+]
+```
+
+```elixir
+# Default config
+inputs = [
+  input: Kino.Input.text("Input", default: "Book"),
+  data1: Kino.Input.text("Text 1", default: "Dog"),
+  data2: Kino.Input.text("Text 2", default: "Library")
+]
+
+form = Kino.Control.form(inputs, submit: "Check")
+Kino.render(form)
+
+frame = Kino.Frame.new()
+
+# Listen to form updates
+Kino.listen(form, fn %{data: %{input: input, data1: data1, data2: data2}, origin: origin} ->
+  if input != "" or data1 != "" or data2 != "" do
+    # Calculate cosine similarity for input and data pairs
+    input_embedding = Nx.Serving.run(serving, input)
+    data1_embedding = Nx.Serving.run(serving, data1)
+    data2_embedding = Nx.Serving.run(serving, data2)
+    similarity1 = cosine_similarity.(input_embedding[:embedding], data1_embedding[:embedding])
+    similarity2 = cosine_similarity.(input_embedding[:embedding], data2_embedding[:embedding])
+
+    data = [
+      %{name: data1, similarity: Nx.to_number(similarity1)},
+      %{name: data2, similarity: Nx.to_number(similarity2)}
+    ]
+
+    # Display similarities
+    Kino.Frame.append(frame, Kino.Markdown.new("Similarity of `#{input}` to:"))
+    Kino.Frame.append(frame, Kino.DataTable.new(data))
+  else
+    content = Kino.Markdown.new("_ERROR! Enter both questions..._")
+    Kino.Frame.append(frame, content, to: origin)
+  end
+end)
+
+# Display the frame
+frame
+```
+
+```elixir
+# Default config
+inputs = [
+  input: Kino.Input.text("Input", default: "Author of Dune"),
+  data1: Kino.Input.text("Text 1", default: "Frank Herbert was an English author"),
+  data2: Kino.Input.text("Text 2", default: "Dune is a 1965 epic science fiction novel")
+]
+
+form = Kino.Control.form(inputs, submit: "Check")
+Kino.render(form)
+
+frame = Kino.Frame.new()
+
+# Listen to form updates
+Kino.listen(form, fn %{data: %{input: input, data1: data1, data2: data2}, origin: origin} ->
+  if input != "" or data1 != "" or data2 != "" do
+    # Calculate cosine similarity for input and data pairs
+    input_embedding = Nx.Serving.run(serving, input)
+    data1_embedding = Nx.Serving.run(serving, data1)
+    data2_embedding = Nx.Serving.run(serving, data2)
+    similarity1 = cosine_similarity.(input_embedding[:embedding], data1_embedding[:embedding])
+    similarity2 = cosine_similarity.(input_embedding[:embedding], data2_embedding[:embedding])
+
+    data = [
+      %{name: data1, similarity: Nx.to_number(similarity1)},
+      %{name: data2, similarity: Nx.to_number(similarity2)}
+    ]
+
+    # Display similarities
+    Kino.Frame.append(frame, Kino.Markdown.new("Similarity of `#{input}` to:"))
+    Kino.Frame.append(frame, Kino.DataTable.new(data))
+  else
+    content = Kino.Markdown.new("_ERROR! Enter both questions..._")
+    Kino.Frame.append(frame, content, to: origin)
+  end
+end)
+
+# Display the frame
+frame
+```
