@@ -1,19 +1,238 @@
-Space Shuttle Challenger (OV-099) was a Space Shuttle orbiter manufactured by Rockwell International and operated by NASA. Named after the commanding ship of a nineteenth-century scientific expedition that traveled the world, Challenger was the second Space Shuttle orbiter to fly into space after Columbia, and launched on its maiden flight in April 1983. It was destroyed in January 1986 soon after launch in an accident that killed all seven crewmembers aboard.
-
-Initially manufactured as a test article not intended for spaceflight, it was utilized for ground testing of the Space Shuttle orbiter's structural design. However, after NASA found that their original plan to upgrade Enterprise for spaceflight would be more expensive than upgrading Challenger, the orbiter was pressed into operational service in the Space Shuttle program. Lessons learned from the first orbital flights of Columbia led to Challenger's design possessing fewer thermal protection system tiles and a lighter fuselage and wings. This led to it being 1,000 kilograms (2,200 pounds) lighter than Columbia, though still 2,600 kilograms (5,700 pounds) heavier than Discovery.
-
+  Space Shuttle Challenger
+Space Shuttle Challenger (OV-099) was a Space Shuttle orbiter manufactured by Rockwell International and operated by NASA. Named after the commanding ship of a nineteenth-century scientific expedition that traveled the world, Challenger was the second Space Shuttle orbiter to fly into space after Columbia, and launched on its maiden flight in April 1983. It was destroyed in January 1986 soon after launch in a disaster that killed all seven crewmembers aboard.
+Initially manufactured as a test article not intended for spaceflight, it was utilized for ground testing of the Space Shuttle orbiter's structural design. However, after NASA found that their original plan to upgrade Enterprise for spaceflight would be more expensive than upgrading Challenger, the orbiter was pressed into operational service in the Space Shuttle program. Lessons learned from the first orbital flights of Columbia led to Challenger's design possessing fewer thermal protection system tiles and a lighter fuselage and wings. This led to it being 2,200 pounds (1,000 kilograms) lighter than Columbia, though still 5,700 pounds (2,600 kilograms) heavier than Discovery.
 During its three years of operation, Challenger was flown on ten missions in the Space Shuttle program, spending over 62 days in space and completing almost 1,000 orbits around Earth. Following its maiden flight, Challenger supplanted Columbia as the leader of the Space Shuttle fleet, being the most-flown orbiter during all three years of its operation while Columbia itself was seldom used during the same time frame. Challenger was used for numerous civilian satellite launches, such as the first tracking and data relay satellite, the Palapa B communications satellites, the Long Duration Exposure Facility, and the Earth Radiation Budget Satellite. It was also used as a test bed for the Manned Maneuvering Unit (MMU) and served as the platform to repair the malfunctioning SolarMax telescope. In addition, three consecutive Spacelab missions were conducted with the orbiter in 1985, one of which being the first German crewed spaceflight mission. Passengers carried into orbit by Challenger include the first American female astronaut, the first American female spacewalker, the first African-American astronaut, and the first Canadian astronaut.
-
-On its tenth flight in January 1986, Challenger disintegrated 73 seconds after liftoff, killing the seven-member crew of STS-51-L that included Christa McAuliffe, who would have been the first teacher in space. The Rogers Commission which convened shortly afterwards concluded that an O-ring seal in one of Challenger's solid rocket boosters failed to contain pressurized burning gas that leaked out of the booster, causing a structural failure of Challenger's external tank and the orbiter's subsequent disintegration due to aerodynamic forces. NASA's organizational culture was also scrutinized by the Rogers Commission, and the Space Shuttle program's goal of replacing the United States' expendable launch systems was cast into doubt. The loss of Challenger and its crew led to a broad rescope of the program, and numerous aspects – such as launches from Vandenberg, the MMU, and Shuttle-Centaur – were scrapped to improve crew safety; Challenger and Atlantis were the only orbiters modified to conduct Shuttle-Centaur launches. The recovered remains of the orbiter are mostly buried in a missile silo located at Cape Canaveral LC-31, though one piece is on display at the Kennedy Space Center Visitor Complex.
-
-Because of the low production volume of orbiters, the Space Shuttle program decided to build a vehicle as a Structural Test Article, STA-099, that could later be converted to a flight vehicle. The contract for STA-099 was awarded to North American Rockwell on July 26, 1972, and construction was completed in February 1978.[3] After STA-099's rollout, it was sent to a Lockheed test site in Palmdale, where it spent over 11 months in vibration tests designed to simulate entire shuttle flights, from launch to landing.[4] To prevent damage during structural testing, qualification tests were performed to a safety factor of 1.2 times the design limit loads. The qualification tests were used to validate computational models, and compliance with the required 1.4 factor of safety was shown by analysis.[5] STA-099 was essentially a complete airframe of a Space Shuttle orbiter, with only a mockup crew module installed and thermal insulation placed on its forward fuselage.
-
-NASA planned to refit the prototype orbiter Enterprise (OV-101), used for flight testing, as the second operational orbiter; but Enterprise lacked most of the systems needed for flight, including a functional propulsion system, thermal insulation, a life support system, and most of the cockpit instrumentation. Modifying it for spaceflight was considered to be too difficult, expensive, and time-consuming. Since STA-099 was not as far along in the construction of its airframe, it would be easier to upgrade to a flight article. Because STA-099's qualification testing prevented damage, NASA found that rebuilding STA-099 as a flight worthy orbiter would be less expensive than refitting Enterprise. Work on converting STA-099 to operational status began in January 1979, starting with the crew module (the pressurized portion of the vehicle), as the rest of the vehicle was still being used for testing by Lockheed. STA-099 returned to the Rockwell plant in November 1979, and the original, unfinished crew module was replaced with the newly constructed model. Major parts of STA-099, including the payload bay doors, body flap, wings, and vertical stabilizer, also had to be returned to their individual subcontractors for rework. By early 1981, most of these components had returned to Palmdale to be reinstalled. Work continued on the conversion until July 1982, when the new orbiter was rolled out as Challenger.[4]
-
-Challenger, as did the orbiters built after it, had fewer tiles in its Thermal Protection System than Columbia, though it still made heavier use of the white LRSI tiles on the cabin and main fuselage than did the later orbiters. Most of the tiles on the payload bay doors, upper wing surfaces, and rear fuselage surfaces were replaced with DuPont white Nomex felt insulation. These modifications and an overall lighter structure allowed Challenger to carry 2,500 lb (1,100 kg) more payload than Columbia. Challenger's fuselage and wings were stronger and lighter than Columbia's.[4] The hatch and vertical-stabilizer tile patterns were different from those of the other orbiters. Challenger was the first orbiter to have a heads-up display (HUD) system for use in the descent phase of a mission, and the first to feature Phase I main engines rated for 104% maximum thrust.
-
+On its tenth flight in January 1986, Challenger broke up 73
+seconds after liftoff, killing the seven-member crew of STS-51-L
+that included Christa McAuliffe, who would have been the first teacher in space. The Rogers Commission
+   Challenger
+   Challenger in orbit in 1983, during STS-7
+  Type Spaceplane
+   Class Space Shuttle orbiter
+   Eponym HMS Challenger (1858)
+    Serial no.
+STA-099 (1978–1979) OV-099
+  Owner NASA
+  Manufacturer RockwellInternational
+    Specifications
+  Dry mass 80,600 kilograms (177,700 lb)
+  Rocket Space Shuttle
+    History
+  First flight
+April 4–9, 1983 STS-6
+  Last flight
+January 28, 1986 STS-51-L
+   Flights 10
+  Flight time 1,496 hours[1]
+    Travelled 41,527,414 kilometres (25,803,939 mi) around
+Earth
+  Orbits 995 around Earth
+  Fate Exploded during launch
+    Space Shuttle orbiters
+                                            
+which convened shortly afterwards concluded that an O-ring seal in one of Challenger's solid rocket boosters failed to contain pressurized burning gas that leaked out of the booster, causing a structural failure of Challenger's external tank and the orbiter's subsequent breakup due to aerodynamic forces. NASA's organizational culture was also scrutinized by the Rogers Commission, and the Space Shuttle program's goal of replacing the United States' expendable launch systems was cast into doubt. The loss of Challenger and its crew led to a broad rescope of the program, and numerous aspects – such as launches from Vandenberg, the MMU, and Shuttle-Centaur – were scrapped to improve crew safety; Challenger and Atlantis were the only orbiters modified to conduct Shuttle-Centaur launches. The recovered remains of the orbiter are mostly buried in a missile silo located at Cape Canaveral LC-31, though one piece is on display at the Kennedy Space Center Visitor Complex.
+History
+Challenger was named after HMS Challenger, a British corvette that was the command ship for the Challenger Expedition, a pioneering global marine research expedition undertaken from 1872 through 1876.[2] The Apollo 17 Lunar Module, which landed on the Moon in 1972, was also named Challenger.[2]
+Construction
+Because of the low production volume of orbiters, the Space Shuttle program decided to build a vehicle as a Structural Test Article, STA-099, that could later be converted to a flight vehicle. The contract for STA-099 was awarded to North American Rockwell on July 26, 1972, and construction was completed in February 1978.[3] After STA-099's rollout, it was sent to a Lockheed test site in Palmdale, where it spent over 11 months in vibration tests designed to simulate entire shuttle flights, from launch to landing.[4] To prevent damage during structural testing, qualification tests were performed to a safety factor of 1.2 times the design limit loads. The qualification tests were used to validate computational models, and compliance with the required 1.4 factor of safety was shown by analysis.[5] STA-099 was essentially a complete airframe of a Space Shuttle orbiter, with only a mockup crew module installed and thermal insulation placed on its forward fuselage.[6]
+NASA planned to refit the prototype orbiter Enterprise (OV-101), used for flight testing, as the second operational orbiter; but Enterprise lacked
+most of the systems needed for flight, including a functional propulsion system, thermal insulation, a life support system, and most of the cockpit instrumentation. Modifying it for spaceflight was considered to
+be too difficult, expensive, and time-consuming. Since STA-099 was
+not as far along in the construction of its airframe, it would be easier to
+upgrade to a flight article. Because STA-099's qualification testing
+prevented damage, NASA found that rebuilding STA-099 into a
+flightworthy orbiter would be less expensive than refitting Enterprise.
+Work on converting STA-099 to operational status began in January
+1979, starting with the crew module (the pressurized portion of the
+vehicle), as the rest of the vehicle was still being used for testing by
+Lockheed. STA-099 returned to the Rockwell plant in November 1979,
+and the original, unfinished crew module was replaced with the newly
+constructed model. Major parts of STA-099, including the payload bay doors, body flap, wings, and vertical
+                        Challenger being prepared in 1985 for its penultimate flight, STS-61-A
+         Challenger atop a Crawler- transporter, en route to the launch site for its final flight, STS-51-L
+   
+stabilizer, also had to be returned to their individual subcontractors for rework. By early 1981, most of these components had returned to Palmdale to be reinstalled. Work continued on the conversion until July 1982, when the new orbiter was rolled out as Challenger.[4]
+Challenger, as did the orbiters built after it, had fewer tiles in its
+Thermal Protection System than Columbia, though it still made heavier
+use of the white LRSI tiles on the cabin and main fuselage than did the
+later orbiters. Most of the tiles on the payload bay doors, upper wing
+surfaces, and rear fuselage surfaces were replaced with DuPont white
+Nomex felt insulation. These modifications and an overall lighter
+structure allowed Challenger to carry 2,500 lb (1,100 kg) more payload
+than Columbia. Challenger's fuselage and wings were stronger and
+lighter than Columbia's.[4] The hatch and vertical-stabilizer tile patterns
+were different from those of the other orbiters. Challenger was the first orbiter to have a heads-up display (HUD) system for use in the descent phase of a mission, and the first to feature Phase I main engines rated for 104% maximum thrust.
+Construction milestones (as STA-099)
+  Challenger being transported by Shuttle Carrier Aircraft 905, shortly before being delivered in 1982
+          Date Milestone[7]
+  1972 July 26 Contract Award to North American Rockwell
+   1975 November 21 Start structural assembly of crew module
+  1976 June 14 Start structural assembly of aft fuselage.
+  1977 March 16 Wings arrive at Palmdale from Grumman
+   1977 September 30 Start of Final Assembly
+  1978 February 10 Completed Final Assembly
+  1978 February 14 Rollout from Palmdale
+  Construction milestones (as OV-099)
+   Date Milestone[7]
+  1979 January 5 Contract Award to Rockwell International, Space Transportation Systems Division
+   1979 January 28 Start structural assembly of crew module
+  1980 November 3 Start of Final Assembly
+  1981 October 23 Completed Final Assembly
+  1982 June 30 Rollout from Palmdale
+  1982 July 1 Overland transport from Palmdale to Edwards
+  1982 July 5 Delivery to KSC
+  1982 December 18 Flight Readiness Firing (FRF)
+  1983 April 4 First Flight (STS-6)
+  1986 January 28 Structural Failure (STS-51-L)
+   
+Flights and modifications
+After its first flight in April 1983, Challenger quickly became the workhorse of NASA's Space Shuttle fleet, flying six of nine Space Shuttle missions in 1983 and 1984. Even when the orbiters Discovery and Atlantis joined the fleet, Challenger flew three missions a year from 1983 to 1985. Challenger, along with Atlantis, was modified at Kennedy Space Center to be able to carry the Centaur-G upper stage in its payload bay. If flight STS-51-L had been successful, Challenger's next mission would have been the deployment of the Ulysses probe with the Centaur to study the polar regions of the Sun.
+Challenger flew the first American woman, African-American, Dutchman, and Canadian into space; carried three Spacelab missions; and performed the first night launch and night landing of a Space Shuttle.
+Final mission and destruction
 STS-51-L was the orbiter's tenth and final flight, initially planned to launch on January 26, 1986 (after several technical and paperwork delays). This mission attracted huge media attention, as one of the crew was a civilian schoolteacher, Christa McAuliffe, who was assigned to carry out live lessons from the orbiter (as part of NASA's Teacher in Space Project). Other members would deploy the TDRS-B satellite and conduct comet observations.
-
-Challenger blasted off at 11:38 am EST on January 28, 1986. Just over a minute into the flight, a faulty booster joint opened up, leading to a flame that melted securing struts which resulted in a catastrophic structural failure and explosion of the External Tank. The resulting pressure waves and aerodynamic forces destroyed the orbiter, resulting in the loss of all the crew.
-
-Challenger was the first Space Shuttle to be destroyed in a mission accident.[8] The collected debris of the vessel is currently buried in decommissioned missile silos at Launch Complex 31, Cape Canaveral Air Force Station. A section of the fuselage recovered from Space Shuttle Challenger can also be found at the "Forever Remembered" memorial at the Kennedy Space Center Visitor Complex in Florida. Debris from the orbiter sometimes washes up on the Florida coast.[9] This is collected and transported to the silos for storage. Because of its early loss, Challenger was the only Space Shuttle that never wore the NASA "meatball" logo, and was never modified with the MEDS "glass cockpit". The tail was never fitted with a drag chute, which was fitted to the remaining orbiters in 1992. Challenger and sister ship Columbia are the only two shuttles that never visited the Mir Space Station or the International Space Station. In September 2020 Netflix released Challenger: The Final Flight, a four-part miniseries created by Steven Leckart and Glen Zipper documenting the tragedy firsthand.
+Challenger blasted off at 11:38 am EST on January 28, 1986. Just over a minute into the flight, a faulty booster joint opened up, leading to a flame that melted securing struts which resulted in a catastrophic structural failure and explosion of the External Tank. The resulting pressure waves and aerodynamic forces destroyed the orbiter, resulting in the loss of all of the crew.
+Challenger was the first Space Shuttle to be destroyed in a mission disaster.[8] The collected debris of the vessel is currently buried in decommissioned missile silos at Launch Complex 31, Cape Canaveral Air Force Station. A section of the fuselage recovered from Space Shuttle Challenger can also be found at the "Forever Remembered" memorial at the Kennedy Space Center Visitor Complex in Florida. Debris from the orbiter sometimes washes up on the Florida coast.[9] This is collected and transported to the silos for storage. Because of its early loss, Challenger was the only Space Shuttle that never wore the NASA "meatball" logo, and was never modified with the MEDS "glass cockpit". The tail was never fitted with a drag chute, which was fitted to the remaining orbiters in 1992. Challenger and sister ship Columbia are the only two shuttles that never visited the Mir Space Station or the International Space Station. In September 2020 Netflix released Challenger: The Final Flight, a four-part miniseries created by Steven Leckart and Glen Zipper documenting the tragedy firsthand.
+Lawsuits
+In March 1988 the federal government and Morton Thiokol Inc. agreed to pay $7.7 million in cash and annuities to the families of four of the seven Challenger astronauts as part of a settlement aimed at avoiding lawsuits in the nation's worst space disaster, according to government documents. The documents show that Morton Thiokol, which manufactured the faulty solid rocket boosters blamed for the accident, paid 60 percent, or $4,641,000. The remainder, $3,094,000, was paid by the government.
+                  Challenger breaks apart after launch in 1986, killing all crew on board, including Christa McAuliffe, a teacher with the NASA Teacher in Space Project
+                 
+In September 1988 a federal judge dismissed two lawsuits seeking $3 billion from Space Shuttle rocket-maker Morton Thiokol Inc. by Roger Boisjoly, a former company engineer who warned against the ill-fated 1986 Challenger launch.[10]
+List of missions
+       Challenger rolls out from the
+Orbiter Processing Facility (OPF) test article STA-099 before being to the Vehicle Assembly Building retrofitted as an orbiter
+(VAB) in 1983
+Challenger served as structural
+ 
+      # Date
+Designation
+Launch Landing pad location
+Notes
+Mission duration
+         1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+April 4, 1983
+STS-6
+LC-39A
+Edwards Air Force Base
+Deployed TDRS-A. First spacewalk during a Space Shuttle mission.
+5 days, 00 hours, 23 minutes, 42 seconds
+                June 18, 1983
+STS-7
+LC-39A
+Edwards Air Force Base
+Sally Ride becomes first American woman in space. Deployed two communications satellites, including Anik C2.
+6 days, 02 hours, 23 minutes, 59 seconds
+                   August 30, 1983
+STS-8
+LC-39A
+Edwards Air Force Base
+Guion Bluford becomes first African-American in space. First shuttle night launch and night landing. Deployed INSAT-1B. Carried 261,900 envelopes stamped to commemorate the 25th Anniversary of NASA, most of which were sold to the public.[11]
+6 days, 01 hours, 08 minutes, 43 seconds
+           February 3, 1984
+STS-41-B
+LC-39A
+Kennedy Space Center
+First untethered spacewalk using the Manned Maneuvering Unit. Deployed WESTAR and Palapa B- 2 communications satellites unsuccessfully (both were retrieved during STS-51-A).
+7 days, 23 hours, 15 minutes, 55 seconds
+              April 6, 1984
+STS-41-C
+LC-39A
+Edwards Air Force Base
+Solar Maximum Mission service mission.
+6 days, 23 hours, 40 minutes, 07 seconds
+               October 5, 1984
+STS-41-G
+LC-39A
+Kennedy Space Center
+First mission to carry two women. Marc Garneau becomes first Canadian in space. Kathryn D. Sullivan becomes first American woman to make a spacewalk. Deployed Earth Radiation Budget Satellite.
+8 days, 05 hours, 23 minutes, 33 seconds
+                April 29, 1985
+STS-51-B
+LC-39A
+Edwards Air Force Base
+Carried Spacelab-3.
+7 days, 00 hours, 08 minutes, 46 seconds
+           July 29, 1985
+STS-51-F
+LC-39A
+Edwards Air Force Base
+Carried Spacelab-2. Only STS mission to abort after launch.
+7 days, 22 hours, 45 minutes, 26 seconds
+              October 30, 1985
+STS-61-A
+LC-39A
+Edwards Air Force Base
+Carried German Spacelab D-1. Wubbo Ockels becomes the first Dutchman in space.
+7 days, 00 hours, 44 minutes, 51 seconds
+                   January 28, 1986
+STS-51-L
+LC-39B
+Did not land (planned to land at Kennedy Space Center).
+First mission to have a private citizen in space (Christa McAuliffe). Broke up after launch, killing all seven astronauts on board. Would have deployed TDRS-B.
+0 days, 00 hours, 01 minute, 13 seconds
+            
+Mission and tribute insignias
+   NASA Orbiter Tribute for Space Shuttle Challenger
+     Mission insignia for Challenger flights
+             STS-6 STS-7 STS-8 STS-41-B STS-41-C STS-41-G
+                       STS-51-B STS-51-F STS-61-A STS-51-L STS-61-F*
+            
+* Mission canceled due to loss of Challenger on STS-51-L. See also
+List of human spaceflights
+List of Space Shuttle crews
+List of Space Shuttle missions
+Timeline of Space Shuttle missions
+List of human spaceflights chronologically
+Challenger flag
+Challenger Colles, mountain range on Pluto named for the Space Shuttle
+References
+1. Harwood, William (October 12, 2009). "STS-129/ISS-ULF3 Quick-Look Data" (http://www.cbsne ws.com/network/news/space/129/129quicklook2.pdf) (PDF). CBS News. Retrieved
+November 30, 2009.
+2. "Orbiter Vehicles" (http://www-pao.ksc.nasa.gov/shuttle/resources/orbiters/Challenger.html) Archived (https://web.archive.org/web/20090203035705/http://www-pao.ksc.nasa.gov/shuttle/re sources/orbiters/Challenger.html) February 3, 2009, at the Wayback Machine, Kennedy Space Center, NASA, 2000-10-03, retrieved November 7, 2007.
+3. "NASA – Space Shuttle Overview: Challenger (OV-099)" (http://www.nasa.gov/centers/kennedy/ shuttleoperations/orbiters/challenger-info.html). Retrieved November 7, 2012.
+4. Lardas, Mark (2012). Space Shuttle Launch System: 1972–2004. Osprey Publishing. p. 36.
+5. NASA Engineering and Safety Center (2007). Design Development Test and Evaluation (DDT&E) Considerations for Safe and Reliable Human Rated Spacecraft Systems, Vol. II (http:// www.nasa.gov/pdf/189071main_RP-06-108_05-173_DDT%26_E_Volume_II_(MASTER)08-07- 2007_Final_%5B1%5D.pdf), June 14, 2007, p. 23.
+6. Evans, Ben (2007). Space Shuttle Challenger: Ten Journeys Into the Unknown. Praxis Publishing. p. 8. ISBN 978-0-387-46355-1.
+7. "Shuttle Orbiter Challenger (OV-099)" (https://web.archive.org/web/20190523112035/https://scie nce.ksc.nasa.gov/shuttle/resources/orbiters/challenger.html). NASA/KSC. Archived from the original (http://science.ksc.nasa.gov/shuttle/resources/orbiters/challenger.html) on May 23, 2019. Retrieved November 7, 2012.
+8. Ware, Doug G. (January 28, 2016). "Engineer who warned of 1986 Challenger disaster still racked with guilt, three decades on" (http://www.upi.com/Top_News/US/2016/01/28/Engineer-w ho-warned-of-1986-Challenger-disaster-still-racked-with-guilt-three-decades-on/489145403264 3/). United Press International. Retrieved January 28, 2016.
+9. "Shuttle Challenger debris washes up on shore" (http://www.cnn.com/TECH/9612/17/challenge r.debris/index.html). CNN. 1996. Retrieved November 7, 2007.
+10. "JUDGE DISMISSES LAWSUITS AGAINST MAKER OF SHUTTLE ROCKET BY FORMER EMPLOYEE - The Washington Post" (https://www.washingtonpost.com/archive/business/1988/0 9/03/judge-dismisses-lawsuits-against-maker-of-shuttle-rocket-by-former-employee/c5b0a4c4-8 0a6-428e-9980-10376e9e0daf/). The Washington Post.
+    Spaceflight portal Space portal 1980s portal
+                                             
+11. Stamps (Philately)/Space Shuttle Challenger (http://en.allexperts.com/q/Stamps-Philately-1610/ Space-Shuttle-Challenger.htm) Archived (https://web.archive.org/web/20140529000547/http://e n.allexperts.com/q/Stamps-Philately-1610/Space-Shuttle-Challenger.htm) May 29, 2014, at the Wayback Machine
+This article incorporates public domain material (https://www.jsc.nasa.gov/policies.html#Guidelines) from websites or documents of the National Aeronautics and Space Administration.
+Further reading
+Evans, Ben (2007). Space Shuttle Challenger: Ten Journeys into the Unknown (https://books.go ogle.com/books?id=MQjCF8Cc7HoC). Published in association with Praxis Pub. ISBN 978-0- 387-46355-1.
+Harris, Hugh (2014). Challenger: An American Tragedy: The Inside Story from Launch Control (h ttps://books.google.com/books?id=cBJ7AgAAQBAJ&pg=PP1). Open Road Media.
+ISBN 9781480413504.
+External links
+Mission Summary Archive (http://science.ksc.nasa.gov/shuttle/missions/missions.html)
+Ronald Reagan: Address to the Nation on the Explosion of the Space Shuttle Challenger (http:// www.presidency.ucsb.edu/ws/index.php?pid=37646)
+Space Shuttle Challenger Explosion video (http://www.spacetoday.org/SpcShtls/ChallengerExpl osion1986.html)
+Shuttle Orbiter Challenger (OV-99) (https://web.archive.org/web/20090203035705/http://www-pa o.ksc.nasa.gov/shuttle/resources/orbiters/Challenger.html)
+Rogers Commission Report (http://science.ksc.nasa.gov/shuttle/missions/51-l/docs/rogers-com mission/table-of-contents.html) Archived (https://web.archive.org/web/20130808045517/http://sci ence.ksc.nasa.gov/shuttle/missions/51-l/docs/rogers-commission/table-of-contents.html) August 8, 2013, at the Wayback Machine
+Astronautix on Challenger (https://web.archive.org/web/20060128042112/http://www.astronauti x.com/craft/chaenger.htm)
+Space Shuttle Challenger: A Tribute (http://www.life.com/image/first/in-gallery/54891/space-shutt le-challenger-a-tribute#index/0) Archived (https://web.archive.org/web/20110131163159/http://w ww.life.com/image/first/in-gallery/54891/space-shuttle-challenger-a-tribute#index/0) January 31, 2011, at the Wayback Machine – slideshow by Life (magazine)
+Go or No Go: The Challenger Legacy (http://www.retroreport.org/video/major-malfunction-lesson s-from-challenger/) an Emmy-winning short documentary by Retro Report
+Challenger Mission Videos of the Accident from Spaceflightnow.com (http://spaceflightnow.com/ challenger/timeline/)
+NASA film on the accident and investigation downloadable from archive.org The Internet Archive (https://archive.org/details/ChallengerAccidentandInvestigation)
+Memorial to Greg Jarvis in Hermosa Beach, California at "Sites of Memory" (http://sites-of-memo ry.de/main/gregjarvis.html)
+Personal Observations on the Reliability of the Shuttle by R. P. Feynman (http://science.ksc.nas a.gov/shuttle/missions/51-l/docs/rogers-commission/Appendix-F.txt) Archived (https://web.archiv e.org/web/20120911052800/http://science.ksc.nasa.gov/shuttle/missions/51-l/docs/rogers-comm ission/Appendix-F.txt) September 11, 2012, at the Wayback Machine
+RealPlayer video of Feynman's O-Ring demonstration (low quality) (http://heelspurs.com/zpics/f eynman6.rm)
+CBS Radio news Bulletin Anchored by Christopher Glenn of the Challenger Disaster from January 28, 1986 (http://donswaim.com/wcbs-challenger-1.mp3), Part 2 of CBS Radio coverage of Challenger Disaster (http://donswaim.com/wcbs-challenger-2.mp3), Part 3 of CBS Radio
+                                                           
+News coverage of Challenger disaster (http://donswaim.com/wcbs-challenger-3.mp3), Part 4 of CBS Radio news coverage of Challenger disaster (http://donswaim.com/wcbs-challenger-4.mp 3)
+Image of silo storing Challenger debris (http://www.robsv.com/cape/c31.html)
+Space Shuttle Memorial covering both Space Shuttle disasters (http://www.spaceshuttlememori
+al.com)
+Space Shuttle Challenger STS-51L Accident Investigation (https://www.youtube.com/watch?v=N nmSdVbgQ4M)
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Space_Shuttle_Challenger&oldid=1214363678"
+           
